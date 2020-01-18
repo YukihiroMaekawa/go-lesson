@@ -134,7 +134,7 @@ func init() {
 func init() { proto.RegisterFile("customer.proto", fileDescriptor_9efa92dae3d6ec46) }
 
 var fileDescriptor_9efa92dae3d6ec46 = []byte{
-	// 185 bytes of a gzipped FileDescriptorProto
+	// 180 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4b, 0x2e, 0x2d, 0x2e,
 	0xc9, 0xcf, 0x4d, 0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x80, 0xf1, 0x95, 0xea,
 	0xb9, 0x44, 0x83, 0x52, 0xd3, 0x33, 0x8b, 0x4b, 0x9c, 0xa1, 0x22, 0x41, 0xa9, 0x85, 0xa5, 0xa9,
@@ -142,11 +142,11 @@ var fileDescriptor_9efa92dae3d6ec46 = []byte{
 	0x41, 0x60, 0xb6, 0x90, 0x14, 0x17, 0x47, 0x62, 0x4a, 0x4a, 0x51, 0x6a, 0x71, 0xb1, 0xa1, 0x04,
 	0x13, 0x58, 0x1c, 0xce, 0x47, 0x92, 0x33, 0x92, 0x60, 0x46, 0x91, 0x33, 0x42, 0x92, 0x33, 0x96,
 	0x60, 0x41, 0x91, 0x33, 0x56, 0xb2, 0xe0, 0x12, 0x43, 0x77, 0x40, 0x71, 0x41, 0x7e, 0x5e, 0x71,
-	0xaa, 0x90, 0x1c, 0x17, 0x17, 0xcc, 0x99, 0x9e, 0x2e, 0x50, 0x77, 0x20, 0x89, 0x18, 0xa5, 0x73,
-	0xf1, 0x05, 0x24, 0x56, 0xe6, 0xa6, 0xe6, 0x95, 0x04, 0xa7, 0x16, 0x95, 0x65, 0x26, 0xa7, 0x0a,
-	0x85, 0x72, 0xf1, 0xa1, 0x9a, 0x25, 0x24, 0xaf, 0x07, 0xf7, 0x39, 0x56, 0x6f, 0x4a, 0x29, 0xe0,
-	0x56, 0x00, 0x71, 0x86, 0x12, 0x43, 0x12, 0x1b, 0x38, 0xd0, 0x8c, 0x01, 0x01, 0x00, 0x00, 0xff,
-	0xff, 0xa0, 0xa1, 0xa5, 0xa5, 0x46, 0x01, 0x00, 0x00,
+	0xaa, 0x90, 0x1c, 0x17, 0x17, 0xcc, 0x99, 0x9e, 0x2e, 0x50, 0x77, 0x20, 0x89, 0x18, 0x65, 0x70,
+	0xf1, 0xc3, 0xf4, 0x04, 0xa7, 0x16, 0x95, 0x65, 0x26, 0xa7, 0x0a, 0x85, 0x72, 0xf1, 0xa1, 0x1a,
+	0x26, 0x24, 0xaf, 0x07, 0xf7, 0x3a, 0x56, 0x7f, 0x4a, 0x29, 0xe0, 0x56, 0x00, 0x71, 0x87, 0x12,
+	0x43, 0x12, 0x1b, 0x38, 0xd4, 0x8c, 0x01, 0x01, 0x00, 0x00, 0xff, 0xff, 0xd8, 0xca, 0x95, 0xe0,
+	0x47, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -157,72 +157,72 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// PaymentServiceClient is the client API for PaymentService service.
+// CustomerServiceClient is the client API for CustomerService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type PaymentServiceClient interface {
+type CustomerServiceClient interface {
 	RegistCustomer(ctx context.Context, in *RegistCustomerRequest, opts ...grpc.CallOption) (*RegistCustomerResponse, error)
 }
 
-type paymentServiceClient struct {
+type customerServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewPaymentServiceClient(cc *grpc.ClientConn) PaymentServiceClient {
-	return &paymentServiceClient{cc}
+func NewCustomerServiceClient(cc *grpc.ClientConn) CustomerServiceClient {
+	return &customerServiceClient{cc}
 }
 
-func (c *paymentServiceClient) RegistCustomer(ctx context.Context, in *RegistCustomerRequest, opts ...grpc.CallOption) (*RegistCustomerResponse, error) {
+func (c *customerServiceClient) RegistCustomer(ctx context.Context, in *RegistCustomerRequest, opts ...grpc.CallOption) (*RegistCustomerResponse, error) {
 	out := new(RegistCustomerResponse)
-	err := c.cc.Invoke(ctx, "/customer.PaymentService/RegistCustomer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/RegistCustomer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// PaymentServiceServer is the server API for PaymentService service.
-type PaymentServiceServer interface {
+// CustomerServiceServer is the server API for CustomerService service.
+type CustomerServiceServer interface {
 	RegistCustomer(context.Context, *RegistCustomerRequest) (*RegistCustomerResponse, error)
 }
 
-// UnimplementedPaymentServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedPaymentServiceServer struct {
+// UnimplementedCustomerServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedCustomerServiceServer struct {
 }
 
-func (*UnimplementedPaymentServiceServer) RegistCustomer(ctx context.Context, req *RegistCustomerRequest) (*RegistCustomerResponse, error) {
+func (*UnimplementedCustomerServiceServer) RegistCustomer(ctx context.Context, req *RegistCustomerRequest) (*RegistCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegistCustomer not implemented")
 }
 
-func RegisterPaymentServiceServer(s *grpc.Server, srv PaymentServiceServer) {
-	s.RegisterService(&_PaymentService_serviceDesc, srv)
+func RegisterCustomerServiceServer(s *grpc.Server, srv CustomerServiceServer) {
+	s.RegisterService(&_CustomerService_serviceDesc, srv)
 }
 
-func _PaymentService_RegistCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CustomerService_RegistCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RegistCustomerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymentServiceServer).RegistCustomer(ctx, in)
+		return srv.(CustomerServiceServer).RegistCustomer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/customer.PaymentService/RegistCustomer",
+		FullMethod: "/customer.CustomerService/RegistCustomer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentServiceServer).RegistCustomer(ctx, req.(*RegistCustomerRequest))
+		return srv.(CustomerServiceServer).RegistCustomer(ctx, req.(*RegistCustomerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _PaymentService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "customer.PaymentService",
-	HandlerType: (*PaymentServiceServer)(nil),
+var _CustomerService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "customer.CustomerService",
+	HandlerType: (*CustomerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "RegistCustomer",
-			Handler:    _PaymentService_RegistCustomer_Handler,
+			Handler:    _CustomerService_RegistCustomer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
