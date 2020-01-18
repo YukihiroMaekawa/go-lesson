@@ -2,13 +2,13 @@ syntax = "proto3";
 package order;
 
 service OrderService {
-    rpc Order(OrderRequest) returns (OrderResponse) {}
+    rpc RegistOrder(RegistOrderRequest) returns (RegistOrderResponse) {}
 }
 
-message OrderRequest {
+message RegistOrderRequest {
     string customerID = 1;
 }
 
-message OrderResponse {
+message RegistOrderResponse {
     string orderID = 1;
 }

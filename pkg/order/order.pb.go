@@ -24,78 +24,78 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type OrderRequest struct {
+type RegistOrderRequest struct {
 	CustomerID           string   `protobuf:"bytes,1,opt,name=customerID,proto3" json:"customerID,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *OrderRequest) Reset()         { *m = OrderRequest{} }
-func (m *OrderRequest) String() string { return proto.CompactTextString(m) }
-func (*OrderRequest) ProtoMessage()    {}
-func (*OrderRequest) Descriptor() ([]byte, []int) {
+func (m *RegistOrderRequest) Reset()         { *m = RegistOrderRequest{} }
+func (m *RegistOrderRequest) String() string { return proto.CompactTextString(m) }
+func (*RegistOrderRequest) ProtoMessage()    {}
+func (*RegistOrderRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cd01338c35d87077, []int{0}
 }
 
-func (m *OrderRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_OrderRequest.Unmarshal(m, b)
+func (m *RegistOrderRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegistOrderRequest.Unmarshal(m, b)
 }
-func (m *OrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_OrderRequest.Marshal(b, m, deterministic)
+func (m *RegistOrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegistOrderRequest.Marshal(b, m, deterministic)
 }
-func (m *OrderRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_OrderRequest.Merge(m, src)
+func (m *RegistOrderRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegistOrderRequest.Merge(m, src)
 }
-func (m *OrderRequest) XXX_Size() int {
-	return xxx_messageInfo_OrderRequest.Size(m)
+func (m *RegistOrderRequest) XXX_Size() int {
+	return xxx_messageInfo_RegistOrderRequest.Size(m)
 }
-func (m *OrderRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_OrderRequest.DiscardUnknown(m)
+func (m *RegistOrderRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegistOrderRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_OrderRequest proto.InternalMessageInfo
+var xxx_messageInfo_RegistOrderRequest proto.InternalMessageInfo
 
-func (m *OrderRequest) GetCustomerID() string {
+func (m *RegistOrderRequest) GetCustomerID() string {
 	if m != nil {
 		return m.CustomerID
 	}
 	return ""
 }
 
-type OrderResponse struct {
+type RegistOrderResponse struct {
 	OrderID              string   `protobuf:"bytes,1,opt,name=orderID,proto3" json:"orderID,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *OrderResponse) Reset()         { *m = OrderResponse{} }
-func (m *OrderResponse) String() string { return proto.CompactTextString(m) }
-func (*OrderResponse) ProtoMessage()    {}
-func (*OrderResponse) Descriptor() ([]byte, []int) {
+func (m *RegistOrderResponse) Reset()         { *m = RegistOrderResponse{} }
+func (m *RegistOrderResponse) String() string { return proto.CompactTextString(m) }
+func (*RegistOrderResponse) ProtoMessage()    {}
+func (*RegistOrderResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cd01338c35d87077, []int{1}
 }
 
-func (m *OrderResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_OrderResponse.Unmarshal(m, b)
+func (m *RegistOrderResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegistOrderResponse.Unmarshal(m, b)
 }
-func (m *OrderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_OrderResponse.Marshal(b, m, deterministic)
+func (m *RegistOrderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegistOrderResponse.Marshal(b, m, deterministic)
 }
-func (m *OrderResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_OrderResponse.Merge(m, src)
+func (m *RegistOrderResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegistOrderResponse.Merge(m, src)
 }
-func (m *OrderResponse) XXX_Size() int {
-	return xxx_messageInfo_OrderResponse.Size(m)
+func (m *RegistOrderResponse) XXX_Size() int {
+	return xxx_messageInfo_RegistOrderResponse.Size(m)
 }
-func (m *OrderResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_OrderResponse.DiscardUnknown(m)
+func (m *RegistOrderResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegistOrderResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_OrderResponse proto.InternalMessageInfo
+var xxx_messageInfo_RegistOrderResponse proto.InternalMessageInfo
 
-func (m *OrderResponse) GetOrderID() string {
+func (m *RegistOrderResponse) GetOrderID() string {
 	if m != nil {
 		return m.OrderID
 	}
@@ -103,23 +103,24 @@ func (m *OrderResponse) GetOrderID() string {
 }
 
 func init() {
-	proto.RegisterType((*OrderRequest)(nil), "order.OrderRequest")
-	proto.RegisterType((*OrderResponse)(nil), "order.OrderResponse")
+	proto.RegisterType((*RegistOrderRequest)(nil), "order.RegistOrderRequest")
+	proto.RegisterType((*RegistOrderResponse)(nil), "order.RegistOrderResponse")
 }
 
 func init() { proto.RegisterFile("order.proto", fileDescriptor_cd01338c35d87077) }
 
 var fileDescriptor_cd01338c35d87077 = []byte{
-	// 137 bytes of a gzipped FileDescriptorProto
+	// 146 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0xce, 0x2f, 0x4a, 0x49,
-	0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x73, 0x94, 0xf4, 0xb8, 0x78, 0xfc,
-	0x41, 0x8c, 0xa0, 0xd4, 0xc2, 0xd2, 0xd4, 0xe2, 0x12, 0x21, 0x39, 0x2e, 0xae, 0xe4, 0xd2, 0xe2,
-	0x92, 0xfc, 0xdc, 0xd4, 0x22, 0x4f, 0x17, 0x09, 0x46, 0x05, 0x46, 0x0d, 0xce, 0x20, 0x24, 0x11,
-	0x25, 0x4d, 0x2e, 0x5e, 0xa8, 0xfa, 0xe2, 0x82, 0xfc, 0xbc, 0xe2, 0x54, 0x21, 0x09, 0x2e, 0x76,
-	0xb0, 0x49, 0x70, 0xd5, 0x30, 0xae, 0x91, 0x0b, 0xd4, 0xe8, 0xe0, 0xd4, 0xa2, 0xb2, 0xcc, 0xe4,
-	0x54, 0x21, 0x13, 0x2e, 0x56, 0x30, 0x5f, 0x48, 0x58, 0x0f, 0xe2, 0x10, 0x64, 0x8b, 0xa5, 0x44,
-	0x50, 0x05, 0x21, 0xa6, 0x2b, 0x31, 0x24, 0xb1, 0x81, 0x9d, 0x6b, 0x0c, 0x08, 0x00, 0x00, 0xff,
-	0xff, 0xd6, 0x8b, 0x3e, 0x67, 0xbd, 0x00, 0x00, 0x00,
+	0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x73, 0x94, 0x4c, 0xb8, 0x84, 0x82,
+	0x52, 0xd3, 0x33, 0x8b, 0x4b, 0xfc, 0x41, 0xdc, 0xa0, 0xd4, 0xc2, 0xd2, 0xd4, 0xe2, 0x12, 0x21,
+	0x39, 0x2e, 0xae, 0xe4, 0xd2, 0xe2, 0x92, 0xfc, 0xdc, 0xd4, 0x22, 0x4f, 0x17, 0x09, 0x46, 0x05,
+	0x46, 0x0d, 0xce, 0x20, 0x24, 0x11, 0x25, 0x7d, 0x2e, 0x61, 0x14, 0x5d, 0xc5, 0x05, 0xf9, 0x79,
+	0xc5, 0xa9, 0x42, 0x12, 0x5c, 0xec, 0x60, 0x53, 0xe1, 0x7a, 0x60, 0x5c, 0xa3, 0x30, 0x2e, 0x1e,
+	0xb0, 0xd2, 0xe0, 0xd4, 0xa2, 0xb2, 0xcc, 0xe4, 0x54, 0x21, 0x37, 0x2e, 0x6e, 0x24, 0x03, 0x84,
+	0x24, 0xf5, 0x20, 0x4e, 0xc3, 0x74, 0x8a, 0x94, 0x14, 0x36, 0x29, 0x88, 0x7d, 0x4a, 0x0c, 0x49,
+	0x6c, 0x60, 0xcf, 0x18, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0x69, 0x93, 0xd6, 0x35, 0xdb, 0x00,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -134,7 +135,7 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type OrderServiceClient interface {
-	Order(ctx context.Context, in *OrderRequest, opts ...grpc.CallOption) (*OrderResponse, error)
+	RegistOrder(ctx context.Context, in *RegistOrderRequest, opts ...grpc.CallOption) (*RegistOrderResponse, error)
 }
 
 type orderServiceClient struct {
@@ -145,9 +146,9 @@ func NewOrderServiceClient(cc *grpc.ClientConn) OrderServiceClient {
 	return &orderServiceClient{cc}
 }
 
-func (c *orderServiceClient) Order(ctx context.Context, in *OrderRequest, opts ...grpc.CallOption) (*OrderResponse, error) {
-	out := new(OrderResponse)
-	err := c.cc.Invoke(ctx, "/order.OrderService/Order", in, out, opts...)
+func (c *orderServiceClient) RegistOrder(ctx context.Context, in *RegistOrderRequest, opts ...grpc.CallOption) (*RegistOrderResponse, error) {
+	out := new(RegistOrderResponse)
+	err := c.cc.Invoke(ctx, "/order.OrderService/RegistOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -156,35 +157,35 @@ func (c *orderServiceClient) Order(ctx context.Context, in *OrderRequest, opts .
 
 // OrderServiceServer is the server API for OrderService service.
 type OrderServiceServer interface {
-	Order(context.Context, *OrderRequest) (*OrderResponse, error)
+	RegistOrder(context.Context, *RegistOrderRequest) (*RegistOrderResponse, error)
 }
 
 // UnimplementedOrderServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedOrderServiceServer struct {
 }
 
-func (*UnimplementedOrderServiceServer) Order(ctx context.Context, req *OrderRequest) (*OrderResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Order not implemented")
+func (*UnimplementedOrderServiceServer) RegistOrder(ctx context.Context, req *RegistOrderRequest) (*RegistOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegistOrder not implemented")
 }
 
 func RegisterOrderServiceServer(s *grpc.Server, srv OrderServiceServer) {
 	s.RegisterService(&_OrderService_serviceDesc, srv)
 }
 
-func _OrderService_Order_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(OrderRequest)
+func _OrderService_RegistOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegistOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).Order(ctx, in)
+		return srv.(OrderServiceServer).RegistOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/order.OrderService/Order",
+		FullMethod: "/order.OrderService/RegistOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).Order(ctx, req.(*OrderRequest))
+		return srv.(OrderServiceServer).RegistOrder(ctx, req.(*RegistOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -194,8 +195,8 @@ var _OrderService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*OrderServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Order",
-			Handler:    _OrderService_Order_Handler,
+			MethodName: "RegistOrder",
+			Handler:    _OrderService_RegistOrder_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
