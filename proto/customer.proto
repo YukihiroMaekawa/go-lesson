@@ -1,0 +1,17 @@
+syntax = "proto3";
+package customer;
+
+service PaymentService {
+    rpc RegistCustomer(RegistCustomerRequest) returns (RegistCustomerResponse) {}
+}
+
+message RegistCustomerRequest {
+    string name = 1;
+    string address1 = 2;
+    string address2 = 3;
+    string address3 = 4;
+}
+
+message RegistCustomerResponse {
+    string customerID = 1;
+}
