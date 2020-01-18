@@ -6,6 +6,7 @@ import (
 
 	"github.com/YukihiroMaekawa/go-lesson/internal/services"
 	"github.com/YukihiroMaekawa/go-lesson/pkg/customer"
+	"github.com/YukihiroMaekawa/go-lesson/pkg/order"
 	"google.golang.org/grpc"
 )
 
@@ -19,8 +20,12 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
+
 	paymentService := &services.CustomerService{}
 	customer.RegisterCustomerServiceServer(s, paymentService)
+
+	orderService := &services.OrderService{}
+	order.RegisterOrderServiceServer(s, orderService)
 
 	log.Printf("Listening on %v", port)
 	if err := s.Serve(lis); err != nil {
