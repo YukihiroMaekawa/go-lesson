@@ -2,6 +2,6 @@ language: go
 go:
     - 1.13.4
 install:
-    - GOOS=linux go build -o ./build/app main.go
+    - GOOS=linux go build -o ./build/app ./cmd/go-lesson/main.go
 script:
     - go test -race ./...
