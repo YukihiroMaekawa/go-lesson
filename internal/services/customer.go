@@ -5,8 +5,11 @@ import (
 	"golang.org/x/net/context"
 )
 
-type customerService struct{}
+type CustomerService struct{}
 
-func (s *customerService) RegistCustomer(ctx context.Context, request *customer.RegistCustomerRequest) (*customer.RegistCustomerResponse, error) {
-	return nil, nil
+func (s *CustomerService) RegistCustomer(ctx context.Context, request *customer.RegistCustomerRequest) (*customer.RegistCustomerResponse, error) {
+	resp := customer.RegistCustomerResponse{
+		CustomerID: "0001",
+	}
+	return &resp, nil
 }
