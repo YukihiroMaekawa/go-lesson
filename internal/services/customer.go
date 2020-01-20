@@ -3,7 +3,7 @@ package services
 import (
 	"fmt"
 
-	"github.com/YukihiroMaekawa/go-lesson/pkg/customer"
+	"github.com/YukihiroMaekawa/go-lesson/internal/grpc/customer"
 	"golang.org/x/net/context"
 )
 

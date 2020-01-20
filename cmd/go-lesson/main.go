@@ -4,9 +4,9 @@ import (
 	"log"
 	"net"
 
+	"github.com/YukihiroMaekawa/go-lesson/internal/grpc/customer"
+	"github.com/YukihiroMaekawa/go-lesson/internal/grpc/order"
 	"github.com/YukihiroMaekawa/go-lesson/internal/services"
-	"github.com/YukihiroMaekawa/go-lesson/pkg/customer"
-	"github.com/YukihiroMaekawa/go-lesson/pkg/order"
 	"google.golang.org/grpc"
 )
 

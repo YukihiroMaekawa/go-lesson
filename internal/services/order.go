@@ -3,7 +3,7 @@ package services
 import (
 	"fmt"
 
-	"github.com/YukihiroMaekawa/go-lesson/pkg/order"
+	"github.com/YukihiroMaekawa/go-lesson/internal/grpc/order"
 	"golang.org/x/net/context"
 )
 
