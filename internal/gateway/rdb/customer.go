@@ -19,7 +19,7 @@ func NewCustomer(db *sql.DB) App {
 	}
 }
 
-func (app App) InsertCustomer(request *entity.RegisterCustomerRequest) (string, error) {
+func (app App) CreateCustomer(request *entity.RegisterCustomerRequest) (string, error) {
 	tx, _ := app.db.Begin()
 
 	t := time.Now()

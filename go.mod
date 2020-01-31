@@ -3,6 +3,7 @@ module github.com/YukihiroMaekawa/go-lesson
 go 1.13
 
 require (
+	github.com/golang/mock v1.1.1
 	github.com/golang/protobuf v1.3.2
 	github.com/lib/pq v1.3.0
 	go.uber.org/multierr v1.4.0

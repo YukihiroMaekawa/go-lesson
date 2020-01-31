@@ -15,7 +15,7 @@ func NewCustomer(p *usecase.Customer) *Customer {
 	return &Customer{customer: p}
 }
 
-func (s *Customer) RegistCustomer(ctx context.Context, request *customer.RegistCustomerRequest) (*customer.RegistCustomerResponse, error) {
+func (s *Customer) CreateCustomer(ctx context.Context, request *customer.CreateCustomerRequest) (*customer.CreateCustomerResponse, error) {
 	req := &entity.RegisterCustomerRequest{
 		Name:     request.GetName(),
 		Address1: request.GetAddress1(),
@@ -23,12 +23,12 @@ func (s *Customer) RegistCustomer(ctx context.Context, request *customer.RegistC
 		Address3: request.GetAddress3(),
 	}
 
-	customerNo, err := s.customer.RegistCustomer(ctx, req)
+	customerNo, err := s.customer.CreateCustomer(ctx, req)
 	if err != nil {
 		return nil, err
 	}
 
-	resp := &customer.RegistCustomerResponse{
+	resp := &customer.CreateCustomerResponse{
 		CustomerID: customerNo,
 	}
 	return resp, nil

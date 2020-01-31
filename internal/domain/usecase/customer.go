@@ -1,3 +1,4 @@
+//go:generate mockgen -destination mocks/mock_customer.go -package=mocks -source=customer.go
 package usecase
 
 import (
@@ -7,16 +8,16 @@ import (
 )
 
 type dber interface {
-	InsertCustomer(request *entity.RegisterCustomerRequest) (string, error)
+	CreateCustomer(request *entity.RegisterCustomerRequest) (string, error)
 }
 
 type Customer struct {
 	DB dber
 }
 
-func (s *Customer) RegistCustomer(ctx context.Context, request *entity.RegisterCustomerRequest) (string, error) {
+func (s *Customer) CreateCustomer(ctx context.Context, request *entity.RegisterCustomerRequest) (string, error) {
 	/*
 		ロジック。。。
 	*/
-	return s.DB.InsertCustomer(request)
+	return s.DB.CreateCustomer(request)
 }
