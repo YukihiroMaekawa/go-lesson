@@ -36,5 +36,6 @@ func (app App) CreateCustomer(request *entity.RegisterCustomerRequest) (string, 
 	if err != nil {
 		return "", multierr.Append(err, tx.Rollback())
 	}
-	return "customer:001", nil
+
+	return "customer", nil
 }

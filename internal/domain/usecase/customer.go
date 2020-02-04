@@ -3,7 +3,7 @@ package usecase
 
 import (
 	"context"
-
+	"fmt"
 	"github.com/YukihiroMaekawa/go-lesson/internal/domain/entity"
 )
 
@@ -16,8 +16,9 @@ type Customer struct {
 }
 
 func (s *Customer) CreateCustomer(ctx context.Context, request *entity.RegisterCustomerRequest) (string, error) {
-	/*
-		ロジック。。。
-	*/
-	return s.DB.CreateCustomer(request)
+	cus, err := s.DB.CreateCustomer(request)
+	if err != nil {
+		return "ERR", err
+	}
+	return fmt.Sprintf("%s:%s", cus, request.Name), nil
 }
